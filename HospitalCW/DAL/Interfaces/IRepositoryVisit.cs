@@ -11,9 +11,11 @@ namespace HospitalCW.DAL.Interfaces
     {
         List<Visit> GetAll();
         Visit GetVisitById(int id);
-        Visit GetVisitByRecord (int recordId);
+        List<Visit> GetByPatient(int PatientId);
+        List<Visit> GetBySpecialist(int SpecialistId);
         void Create(Visit item);
         void Update(Visit item);
         void Delete(Visit item);
+       
     }
 }

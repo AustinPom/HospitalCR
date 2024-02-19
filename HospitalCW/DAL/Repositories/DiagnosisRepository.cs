@@ -14,32 +14,32 @@ namespace HospitalCW.DAL.Repositories
 
         public List<Diagnosis> GetAll()
         {
-            return db.Diagnosiss.Select(i => i).ToList();
+            return db.Diagnoses.Select(i => i).ToList();
         }
 
         public void Create(Diagnosis item)
         {
-            db.Diagnosiss.Add(item);
+            db.Diagnoses.Add(item);
         }
 
         public void Delete(Diagnosis item)
         {
-            db.Diagnosiss.Remove(item);
+            db.Diagnoses.Remove(item);
         }
 
         public Diagnosis GetDiagnosisById(int id)
         {
-            return db.Diagnosiss.FirstOrDefault(c => c.Id == id);
+            return db.Diagnoses.FirstOrDefault(c => c.Id == id);
         }
 
-        public Diagnosis GetDiagnosisBySpecialization (int SpecializationId)
+        public List<Diagnosis> GetDiagnosisBySpecialization (int SpecializationId)
         {
-            return db.Diagnosiss.FirstOrDefault(c => c.SpecializationId == SpecializationId);
+            return db.Diagnoses.Where(c => c.SpecializationId == SpecializationId).ToList();
         }
 
         public void Update(Diagnosis item)
         {
-            var found = db.Diagnosiss.Find(item.Id);
+            var found = db.Diagnoses.Find(item.Id);
             if (found != null)
             {
                 db.Entry(found).CurrentValues.SetValues(item);

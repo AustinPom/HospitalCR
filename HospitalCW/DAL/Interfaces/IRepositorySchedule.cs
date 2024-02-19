@@ -11,7 +11,7 @@ namespace HospitalCW.DAL.Interfaces
     {
         List<Schedule> GetAll();
         Schedule GetScheduleById (int id);
-        Schedule GetScheduleBySpecialist(int SpecialistId);
+        List<Schedule> GetScheduleBySpecialist(int SpecialistId);
         void Create(Schedule item);
         void Update(Schedule item);
         void Delete(Schedule item);

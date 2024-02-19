@@ -14,14 +14,13 @@ namespace HospitalCW.Ninject
     {
         public override void Load()
         {
-            Bind<IRepositoryRecord>().To<RecordRepository>();
             Bind<IRepositoryDiagnosis>().To<DiagnosisRepository>();
             Bind<IRepository<Patient>>().To<PatientRepository>();
             Bind<IRepositoryVisit>().To<VisitRepository>();
-            Bind<IRepository<Specialist>>().To<SpecialistRepository>();
+            Bind<IRepositorySpecialist>().To<SpecialistRepository>();
             Bind<IRepositorySchedule>().To<ScheduleRepository>();
             Bind<IRepositoryUser>().To<UserRepository>();
-            Bind<IRepositorySpecialization>().To<SpecializationRepository>();
+            Bind<IRepository<Specialization>>().To<SpecializationRepository>();
         }
     }
 }

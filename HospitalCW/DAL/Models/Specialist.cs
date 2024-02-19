@@ -29,5 +29,7 @@ namespace HospitalCW.DAL.Models
         {
             return FirstName + " " + SecondName;
         }
+
+        
     }
 }

@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="HospitalCW.PagesLogic.Pages.Other.VisitView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HospitalCW.PagesLogic.Pages.Other"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1"
+Margin="16 16 16 16">
+            <TextBlock>Patients</TextBlock>
+            <ComboBox ItemsSource="{Binding Patients}"
+SelectedItem="{Binding selectedPatient, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock>Specialization</TextBlock>
+            <ComboBox ItemsSource="{Binding Specializations}"
+   SelectedItem="{Binding selectedSpecialization, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Command="{Binding selectSpecialization}">Select specialization</Button>
+            <TextBlock>Specialist</TextBlock>
+            <ComboBox ItemsSource="{Binding Specialists}"
+   SelectedItem="{Binding selectedSpecialist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Command="{Binding selectSpecialist}">Select specialist</Button>
+            <TextBlock>Schedule</TextBlock>
+            <ComboBox ItemsSource="{Binding Schedules}"
+   SelectedItem="{Binding selectedSchedule, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <DatePicker
+            SelectedDate="{Binding selectedDateTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1"
+Grid.Row="1"
+Margin="4 4 4 4">
+            <Button Command="{Binding createVisit}">Create a visit</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

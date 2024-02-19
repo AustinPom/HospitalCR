@@ -9,14 +9,13 @@ namespace HospitalCW.DAL.Interfaces
 {
     public interface IDBRepositories
     {
-        IRepositoryRecord Records { get; }
         IRepository<Patient> Patients { get; }
-        IRepository<Specialist> Specialists { get; }
+        IRepositorySpecialist Specialists { get; }
         IRepositorySchedule Schedules { get; }
         IRepositoryVisit Visits { get; }
-        IRepositoryDiagnosis Diagnosiss { get; }
+        IRepositoryDiagnosis Diagnoses { get; }
         IRepositoryUser Users { get; }
-        IRepositorySpecialization Specializations { get; }
+        IRepository<Specialization> Specializations { get; }
         int Save();
     }
 }

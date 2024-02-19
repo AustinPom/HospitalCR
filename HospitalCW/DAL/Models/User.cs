@@ -18,7 +18,7 @@ namespace HospitalCW.DAL.Models
 
         public Patient Pat { get; set; }
 
-        public Specialist Spec { get; set; }
+        public Specialist Doctor { get; set; }
 
         public override string ToString()
         {

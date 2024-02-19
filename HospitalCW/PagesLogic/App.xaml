@@ -1,0 +1,8 @@
+﻿<Application x:Class="HospitalCW.Pages.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:HospitalCW"
+             StartupUri="PagesLogic/MainView.xaml">
+    <Application.Resources>
+    </Application.Resources>
+</Application>

@@ -32,9 +32,9 @@ namespace HospitalCW.DAL.Repositories
             return db.Schedules.FirstOrDefault(c => c.Id == id);
         }
 
-        public Schedule GetScheduleBySpecialist(int SpecialistId)
+        public List<Schedule> GetScheduleBySpecialist(int SpecialistId)
         {
-            return db.Schedules.FirstOrDefault(c => c.SpecialistId == SpecialistId);
+            return db.Schedules.Where(c => c.SpecialistId == SpecialistId).ToList();
         }
 
         public void Update(Schedule item)

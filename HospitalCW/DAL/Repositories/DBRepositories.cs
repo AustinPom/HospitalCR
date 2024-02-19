@@ -11,12 +11,10 @@ namespace HospitalCW.DAL.Repositories
     public class DBRepositories: IDBRepositories
     {
         private HospitalContext db;
-
-        private RecordRepository _records;
         private PatientRepository _patients;
         private SpecialistRepository _specialists;
         private ScheduleRepository _schedules;
-        private DiagnosisRepository _diagnosiss;
+        private DiagnosisRepository _diagnoses;
         private VisitRepository _visits;
         private UserRepository _users;
         private SpecializationRepository _specializations;
@@ -38,7 +36,7 @@ namespace HospitalCW.DAL.Repositories
             }
         }
 
-        public IRepositorySpecialization Specializations
+        public IRepository<Specialization> Specializations
         {
             get
             {
@@ -47,25 +45,16 @@ namespace HospitalCW.DAL.Repositories
                 return _specializations;
             }
         }
-        public IRepositoryDiagnosis Diagnosiss
+        public IRepositoryDiagnosis Diagnoses
         {
             get
             {
-                if (_diagnosiss == null)
-                    _diagnosiss = new DiagnosisRepository(db);
-                return _diagnosiss;
+                if (_diagnoses == null)
+                    _diagnoses = new DiagnosisRepository(db);
+                return _diagnoses;
             }
         }
 
-        public IRepositoryRecord Records
-        {
-            get
-            {
-                if (_records == null)
-                    _records = new RecordRepository(db);
-                return _records;
-            }
-        }
 
         public IRepository<Patient> Patients
         {
@@ -87,7 +76,7 @@ namespace HospitalCW.DAL.Repositories
             }
         }
 
-        public IRepository<Specialist> Specialists
+        public IRepositorySpecialist Specialists
         {
             get
             {

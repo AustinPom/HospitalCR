@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HospitalCW.DAL.Repositories
 {
-    public class SpecializationRepository: IRepositorySpecialization
+    public class SpecializationRepository: IRepository<Specialization>
     {
         private HospitalContext db;
 

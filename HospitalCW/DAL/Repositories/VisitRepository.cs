@@ -32,9 +32,14 @@ namespace HospitalCW.DAL.Repositories
             return db.Visits.FirstOrDefault(c => c.Id == id);
         }
 
-        public Visit GetVisitByRecord(int RecordId)
+        public List<Visit> GetByPatient(int PatientId)
         {
-            return db.Visits.FirstOrDefault(c => c.RecordId == RecordId);
+            return db.Visits.Where(c => c.PatientId == PatientId).ToList();
+        }
+
+        public List<Visit> GetBySpecialist(int SpecialistId)
+        {
+            return db.Visits.Where(c => c.SpecialistId == SpecialistId).ToList();
         }
 
         public void Update(Visit item)

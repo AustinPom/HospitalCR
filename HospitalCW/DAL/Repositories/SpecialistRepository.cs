@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HospitalCW.DAL.Repositories
 {
-    public class SpecialistRepository: IRepository<Specialist>
+    public class SpecialistRepository: IRepositorySpecialist
     {
         private HospitalContext db;
 
@@ -32,9 +32,9 @@ namespace HospitalCW.DAL.Repositories
             return db.Specialists.FirstOrDefault(c => c.Id == id);
         }
 
-        public Specialist GetBySpecializaionId(int specializationid)
+        public List<Specialist> GetBySpecializationId(int Specializationid)
         {
-            return db.Specialists.FirstOrDefault(c => c.SpecializationId == specializationid);
+            return db.Specialists.Where(c => c.SpecializationId == Specializationid).ToList();
         }
 
         public void Update(Specialist item)

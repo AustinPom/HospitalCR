@@ -12,13 +12,21 @@ namespace HospitalCW.DAL.Models
         [Key]
         public int Id { get; set; }
 
-        public int RecordId { get; set; }
+        public DateTime VisitDate { get; set; }
+
+        public int ScheduleId { get; set; }
+
+        public int SpecialistId { get; set; }
+
+        public int PatientId { get; set; }
 
         public int DiagnosisId { get; set; }
 
+        public bool Status { get; set; }
+
         public override string ToString()
         {
-            return RecordId + " " + DiagnosisId;
+            return VisitDate + " " + ScheduleId + " " + SpecialistId + " " + PatientId + " " + Status + " " + DiagnosisId;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace HospitalCW.DAL.Interfaces
     {
         List<Specialist> GetAll();
         Specialist GetById(int id);
-        Specialist GetBySpecializaion(string Specialization);
+        List<Specialist> GetBySpecializationId(int SpecializationId);
         void Create(Specialist item);
         void Update(Specialist item);
         void Delete(Specialist item);
